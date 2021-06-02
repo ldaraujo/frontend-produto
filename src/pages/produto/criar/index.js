@@ -63,7 +63,7 @@ class Criarproduto extends Component {
                                 type="text"
                                 id="categoria"
                                 name="categoria"
-                                placeholder="categoria"
+                                placeholder="Categoria"
                                 required
                                 value={this.state.produto.categoria}
                                 onChange={this.handleInputChange}
@@ -154,7 +154,7 @@ class Criarproduto extends Component {
     };
  
     handleSubmit = event => {
-        fetch('${process.env.REACT_APP_API_URL}', {
+        fetch(`${process.env.REACT_APP_API_URL}`, {
 
             method: "post",
             body: JSON.stringify(this.state.produto),

@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './index.css';
  
-class DeletarProduto extends Component {
+class Deletarproduto extends Component {
     constructor(props) {
         super(props);
  
@@ -71,7 +71,7 @@ class DeletarProduto extends Component {
     handleClick = event => {
         const { id } = this.props.match.params;
  
-        fetch(`${process.env.REACT_APP_API_URL}${id}`, {
+        fetch(`${process.env.REACT_APP_API_URL}/${id}`, {
             method: "delete"
         })
             .then(data => {
@@ -91,4 +91,4 @@ class DeletarProduto extends Component {
     };
 }
  
-export default DeletarProduto;
+export default Deletarproduto;
