@@ -49,7 +49,7 @@ export default class Main extends Component {
                                 <td>{produto.nome}</td>
                                 <td>{produto.categoria}</td>
                                 <td>{produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
-                                <td>{produto.qtdEstoque.toLocaleString('pt-BR', { style: 'currency'})}</td>
+                                <td>{produto.qtdEstoque}</td>
                                 <td>{new Date(produto.dataVencimento).toLocaleDateString('pt-BR', { year: 'numeric', month: '2-digit', day: '2-digit' })}</td>
                                 <td>{produto.ativo ? "Sim" : "Não"}</td>
                                 <td> <Link to={`/produtos/${produto.id}`}> <button type="button" class="btn btn-primary">Detalhes</button> </Link> </td>

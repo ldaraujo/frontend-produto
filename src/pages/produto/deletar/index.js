@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './index.css';
  
-class Deletarproduto extends Component {
+class DeletarProduto extends Component {
     constructor(props) {
         super(props);
  
@@ -50,7 +50,7 @@ class Deletarproduto extends Component {
         } else {
             return (
                 <fieldset>
-                    <legend>Deletar Usuário</legend>
+                    <legend>Deletar Produto</legend>
                     <div className="produto-delete">
                         <label htmlFor="nome">{this.state.produto.nome} </label>
                         <p>Tem certeza que deseja deletar este registro?</p>
@@ -91,4 +91,4 @@ class Deletarproduto extends Component {
     };
 }
  
-export default Deletarproduto;
+export default DeletarProduto;
