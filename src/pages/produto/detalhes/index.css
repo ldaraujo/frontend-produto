@@ -1,15 +1,16 @@
 .produto-info {
     max-width: 700px;
-    margin: 20px auto 0;
-    padding: 0 20px;
-    background: #fff;
+    margin: 45px auto 0;
+    padding: 0 90px;
+    background: rgb(255, 228, 228);
     border: 1px solid #ddd;
     border-radius: 5px;
 }
  
 .produto-info h1 {
     font-size: 32px;
-    color: #ddd;
+    color: brown;
     line-height: 24px;
     margin-top: 5px;
+    text-align:center;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './index.css';
  
 class Criarproduto extends Component {
@@ -38,8 +39,9 @@ class Criarproduto extends Component {
             return <Redirect to="/produtos" />;
         } else {
             return (
+                <div className="produto-info">
                 <form onSubmit={this.handleSubmit}>
-                    <fieldset>
+                    <fieldset className="box-criar">
                         <legend>Criar produto</legend>
                         <div className="produto-insert">
                             <label htmlFor="nome">Nome </label>
@@ -132,12 +134,22 @@ class Criarproduto extends Component {
                         </label>
                         </div>
  
- 
+                        <table className="button-editar">
+                        <br />
+                        <tbody>
+                        <tr>
+                        <td> <Link to={`/produtos/`}> <button type="button" class="btn btn-warning">Voltar</button> </Link> </td>
+                        <td>
                         <button type="submit" className="btn btn-primary">
                             Cadastrar
                     </button>
-                    </fieldset>
+                    </td>
+                    </tr>
+                </tbody>
+                </table>
+                </fieldset>
                 </form>
+                </div>
             );
         }
     }

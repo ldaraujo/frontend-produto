@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import './index.css';
- 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export default class produto extends Component {
     state = {
         produto: {},
@@ -28,17 +29,47 @@ export default class produto extends Component {
  
         return (
             <div className="produto-info">
-                <h1> {produto.nome} </h1>
-                <h1> {produto.ativo} </h1>
-                <h1> {produto.categoria} </h1>
-                <h1> {produto.preco} </h1>
-                <h1> {produto.qtdEstoque} </h1>
-                <h1> {produto.dataVencimento} </h1>
+            <div class=" col-md-9 col-lg-9 "> 
+            <table class="table table-user-information">
+              <tbody>
+                <tr>
+                <td><h1> Produto: </h1></td>
+                <td><h1> {produto.nome} </h1></td>                
+                </tr>
+                <tr>
+                <td><h1> Status: </h1></td>
+                <td><h1> {produto.ativo} </h1></td>                
+                </tr>
+                <tr>
+                <td><h1> Categoria: </h1></td>
+                <td><h1>{produto.categoria} </h1></td>                
+                </tr>
+                <tr>
+                <td><h1> Preço: </h1></td>
+                <td><h1>{new Number(produto.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} </h1></td>                
+                </tr>
+                <tr>
+                <td><h1> Estoque: </h1></td>
+                <td><h1> {produto.qtdEstoque} </h1></td>                
+                </tr>
+                <tr>
+                <td><h1> Vencimento: </h1></td>
+                <td><h1>{new Date(produto.dataVencimento).toLocaleDateString('pt-BR', { year: 'numeric', month: '2-digit', day: '2-digit' })} </h1></td>                
+                </tr>
+                </tbody>
+              
                 <br />
-                <Link to={`/produtos`}> Voltar </Link> <br />
-                <Link to={`/editarproduto/${produto.id}`}> Editar </Link> <br />
-                <Link to={`/deletarproduto/${produto.id}`}> Deletar </Link> <br />
+                <tbody>
+                <tr>
+                <td> <Link to={`/produtos/`}> <button type="button" class="btn btn-primary">Voltar</button> </Link> </td>
+                <td> <Link to={`/editarproduto/${produto.id}`}> <button type="button" class="btn btn-warning">Editar</button> </Link></td>
+                <td> <Link to={`/deletarproduto/${produto.id}`}> <button type="button" class="btn btn-danger">Deletar</button> </Link></td>
+                </tr>
+                </tbody>
+                </table>
             </div >
+
+            </div>
         );
     }
 }

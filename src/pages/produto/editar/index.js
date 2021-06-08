@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import './index.css';
  
@@ -55,9 +56,10 @@ class Editarproduto extends Component {
             return <Redirect to="/produtos" />;
         } else {
             return (
+                <div className="produto-info">
                 <form onSubmit={this.handleSubmit}>
-                    <fieldset>
-                        <legend>Criar produto</legend>
+                    <fieldset className="box-editar">
+                        <legend>Editar Produto</legend>
                         <div className="produto-update">
                         <label htmlFor="nome">Nome </label>
                             <br />
@@ -125,12 +127,22 @@ class Editarproduto extends Component {
                                 onChange={this.handleInputChange}
                             />
                         </div>
- 
-                        <button type="submit" className="btn btn-primary">
+                        <table className="button-editar">
+                        <br />
+                        <tbody>
+                        <tr>
+                        <td> <Link to={`/produtos/`}> <button type="button" class="btn btn-warning">Voltar</button> </Link> </td>
+                        <td>
+                            <button type="submit" className="btn btn-primary">
                             Atualizar
                     </button>
+                    </td>
+                    </tr>
+                </tbody>
+                </table>
                     </fieldset>
                 </form>
+                </div>
             );
         }
     }

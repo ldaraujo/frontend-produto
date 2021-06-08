@@ -43,27 +43,32 @@ class Deletarproduto extends Component {
     }
  
     render() {
+        
         const { redirect } = this.state;
  
         if (redirect) {
             return <Redirect to="/produtos" />;
         } else {
             return (
+                <div className="produto-info">
                 <fieldset>
                     <legend>Deletar Produto</legend>
                     <div className="produto-delete">
                         <label htmlFor="nome">{this.state.produto.nome} </label>
                         <p>Tem certeza que deseja deletar este registro?</p>
- 
-                        <button
-                            onClick={this.handleClick}
-                        >
-                            Remover
-                        </button>
-                        <br /><br />
-                        <Link to={`/produtos`}>Voltar</Link>
+                       
+                        <table>
+                        <br />
+                            <tbody>
+                            <tr>
+                            <td> <Link to={`/produtos/`}> <button type="button" class="btn btn-primary">Voltar</button> </Link> </td>
+                            <td> <button type="button" class="btn btn-danger" onClick={this.handleClick}> Remover </button></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </fieldset>
+                </div>
             );
         }
     }
